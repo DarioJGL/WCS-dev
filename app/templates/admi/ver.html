@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Administrador{% endblock %}
+
+{% block content %}
+<div class="home_div ver_div">
+    <h2>Visualizaciones</h2>
+    <ul>
+        <li><a class="btn" href="{{ url_for('admi_index') }}">Administradores</a></li>
+        <li><a class="btn" href="{{ url_for('ver_manejador') }}">Manejadores</a></li>
+        <li><a class="btn" href="{{ url_for('ver_camiones') }}">Camiones</a></li>
+        <li><a class="btn" href="{{ url_for('ver_puntosr') }}">Puntos de Recolección</a></li>
+        <li><a class="btn" href="{{ url_for('ver_detalles') }}">Detalles de Recolección</a></li>
+    </ul>
+
+</div>
+{% endblock %}

@@ -1,0 +1,232 @@
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #0d75be;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1 {
+    text-align: center;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+}
+li {
+    list-style-type: none;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.btn {
+    background-color: #0d75be;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #064a7a;
+    scale: 1.01;
+}
+
+.home_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.home_div a {
+    display: grid;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+}
+
+.home_div a:hover {
+    background-color: #064a7a;
+    scale: 1.09;
+}
+
+.home_div img {
+    width: 300px;
+    height: 256px;
+    margin-bottom: 1rem;
+}
+
+.login-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.login-div form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    width: 300px;
+    transition: all 0.3s ease-in-out;
+    gap: 10px;
+}
+
+.login-div div {
+    display: flex;
+}
+
+.login-div input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+}
+
+.btn {
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    padding: 1.025rem;
+}
+
+.btn:hover {
+    color: #064a7a;
+}
+
+.register_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.register_div form {
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 450px;
+    transition: all 0.3s ease-in-out;
+    padding: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.register_div input {
+    padding: 8px;
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.vista_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.vista_div table {
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    width: 450px;
+    transition: all 0.3s ease-in-out;
+    padding: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.vista_div th {
+    background-color: #0d75be;
+    color: #f4f4f4;
+}
+
+.vista_div a {
+    color: #064a7a;
+    text-decoration: none;
+}
+
+.vista_div a:hover {
+    color: #064a7a;
+    text-decoration: underline;
+}
+
+.ver_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.ver_div ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.ver_div a {
+    width: 250px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+p {
+    margin: 0;
+    padding: 0;
+    margin-right: 0.2rem;
+}

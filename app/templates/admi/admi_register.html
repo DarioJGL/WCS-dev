@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="register_div">
+    <h2>Registrar Administrador</h2>
+    <form method="post" action="{{ url_for('admi_insert') }}">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="num_id">Numero de identificacion:</label>
+            <input type="text" class="form-control" id="num_id" name="num_id" required>
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" class="form-control" id="correo" name="correo">
+        </div>
+        <div class="form-group">
+            <label for="telefono">Número telefónico:</label>
+            <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]{10}"
+                placeholder="Ingrese un número de 10 dígitos" required>
+        </div>
+        <div class="form-group">
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" class="form-control" id="contraseña" name="contraseña">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+{% endblock %}

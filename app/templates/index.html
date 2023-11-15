@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="home_div">
+    <a href="{{ url_for('admi') }}" class="btn btn-primary">
+        <img src="static/img/5e47d289f1335_thumb900.webp" alt="Imagen Admi">
+        Soy Admin
+    </a>
+
+    <a href="{{ url_for('manejador') }}" class="btn btn-success">
+        <img src="static/img/cordinador.jpg" alt="Imagen Manejador">
+        Soy Manejador
+    </a>
+</div>
+
+{% endblock %}

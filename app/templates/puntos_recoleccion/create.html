@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<div class="register_div">
+    <h2>Registrar Punto de Recolección</h2>
+    <form action="{{ url_for('registrar_puntosr') }}" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="ubicacion">Ubicación:</label><br>
+        <input type="text" id="ubicacion" name="ubicacion" required><br>
+        <label for="capacidad">Capacidad:</label><br>
+        <input type="number" id="capacidad" name="capacidad" required><br>
+        <label for="ultima_fecha_recoleccion">Última Fecha de Recolección:</label><br>
+        <input type="date" id="ultima_fecha_recoleccion" name="ultima_fecha_recoleccion" required><br>
+        <label for="id_camiones">ID del Camión:</label><br>
+        <input type="number" id="id_camiones" name="id_camiones" required><br>
+        <input class="btn" type="submit" value="Crear">
+    </form>
+
+    {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+    {% if errors %}
+    <ul>
+        {% for field, error in errors.items() %}
+        <li style="color: red;">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!-- templates/actualizar_camion.html -->
+{% extends 'base.html' %}
+
+{% block title %}Actualizar Camión{% endblock %}
+
+{% block content %}
+<div class="register_div">
+    <h2>Actualizar Camión</h2>
+    <form method="post" action="{{ url_for('actualizar_camiones', id=registro[0]) }}">
+        <div class="form-group">
+            <label for="placa">Placa:</label>
+            <input type="text" class="form-control" id="placa" name="placa" value="{{ registro[2] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="modelo">Modelo:</label>
+            <input type="text" class="form-control" id="modelo" name="modelo" value="{{ registro[3] }}">
+        </div>
+        <div class="form-group">
+            <label for="capacidad">Capacidad:</label>
+            <input type="number" class="form-control" id="capacidad" name="capacidad" value="{{ registro[4] }}"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="id_manejador">ID del Manejador:</label>
+            <input type="number" class="form-control" id="id_manejador" name="id_manejador" value="{{ registro[1] }}"
+                required>
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+</div>
+
+
+{% endblock %}

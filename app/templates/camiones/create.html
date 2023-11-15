@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content%}
+
+<div class="register_div">
+    <h2>Registrar Camion</h2>
+    <form action="{{ url_for('registrar_camiones') }}" method="post">
+        <label for="placa">Placa:</label><br>
+        <input type="text" id="placa" name="placa" required><br>
+        <label for="modelo">Modelo:</label><br>
+        <input type="text" id="modelo" name="modelo"><br>
+        <label for="capacidad">Capacidad:</label><br>
+        <input type="number" id="capacidad" name="capacidad" required><br>
+        <label for="id_manejador">ID del Manejador:</label><br>
+        <input type="number" id="id_manejador" name="id_manejador" required><br>
+        <input class="btn" type="submit" value="Crear">
+    </form>
+
+    {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+    {% if errors %}
+    <ul>
+        {% for field, error in errors.items() %}
+        <li style="color: red;">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endif %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WCS - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body>
+    <header>
+        <h1>Waste Collection System</h1>
+        <nav>
+            <ul>
+
+                {% if 'admin' in session %}
+                <li><a href="{{ url_for('enlaces_admi') }}" class="">{{ session['admin'] }}</a></li>
+                <li><a href="{{ url_for('enlaces_admi') }}">Enlaces</a></li>
+                <li><a href="{{ url_for('cerrar_sesion_admi') }}" class="">Cerrar sesión</a></li>
+
+                {% elif 'manejador' in session %}
+                <li><a href="{{ url_for('manejador_index') }}" class="">{{ session['manejador'] }}</a></li>
+                <li><a href="{{ url_for('cerrar_sesion_manejador') }}" class="">Cerrar sesión</a></li>
+                {% else %}
+                <li><a href="{{ url_for('home') }}" class="">Home</a></li>
+                <li><a href="{{ url_for('admi') }}" class="">Admin</a></li>
+                <li><a href="{{ url_for('manejador') }}" class="">Coordinador</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+</body>
+
+</html>

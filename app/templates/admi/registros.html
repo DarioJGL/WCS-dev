@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Administrador{% endblock %}
+
+{% block content %}
+<h2>Registros</h2>
+<div class="home_div">
+
+
+    <ul>
+        <li><a class="btn" href="{{ url_for('manejador_insert') }}"><img src="../../static/img/cordinador.png"
+                    alt="imagen Coordinador">Coordinador</a></li>
+        <li><a class="btn" href="{{ url_for('registrar_camiones') }}"><img src="../../static/img/camion.avif"
+                    alt="imagen Camion">Camión</a></li>
+        <li><a class="btn" href="{{ url_for('registrar_puntosr') }}"><img src="../../static/img/puntosr.avif"
+                    alt="Imagen Puntos de recoleccion">Punto de Recolección</a></li>
+    </ul>
+
+
+
+</div>
+{% endblock %}

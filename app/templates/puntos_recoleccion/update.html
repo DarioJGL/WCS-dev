@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<div class="register_div">
+    <h2>Actualizar Punto de Recolección</h2>
+    <form action="{{ url_for('actualizar_puntosr', id=registro[0]) }}" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" value="{{ registro[2] }}" required><br>
+        <label for="ubicacion">Ubicación:</label><br>
+        <input type="text" id="ubicacion" name="ubicacion" value="{{ registro[3] }}" required><br>
+        <label for="capacidad">Capacidad:</label><br>
+        <input type="number" id="capacidad" name="capacidad" value="{{ registro[4] }}" required><br>
+        <label for="ultima_fecha_recoleccion">Última Fecha de Recolección:</label><br>
+        <input type="date" id="ultima_fecha_recoleccion" name="ultima_fecha_recoleccion" value="{{ registro[5] }}"
+            required><br>
+        <label for="id_camiones">ID del Camión:</label><br>
+        <input type="number" id="id_camiones" name="id_camiones" value="{{ registro[1] }}" required><br>
+        <input class="btn" type="submit" value="Actualizar">
+    </form>
+</div>
+
+
+{% endblock %}

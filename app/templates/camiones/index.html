@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Camiones{% endblock %}
+
+{% block content%}
+<div class="vista_div">
+    <h2>Registros de Camiones</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ID del Manejador</th>
+                <th>Placa</th>
+                <th>Modelo</th>
+                <th>Capacidad</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in registros %}
+            <tr>
+                <td>{{ registro[0] }}</td>
+                <td>{{ registro[1] }}</td>
+                <td>{{ registro[2] }}</td>
+                <td>{{ registro[3] }}</td>
+                <td>{{ registro[4] }}</td>
+                <td><a href="{{ url_for('actualizar_camiones', id=registro[0]) }}">Editar</a></td>
+                <td><a href="{{ url_for('eliminar_camiones', id=registro[0]) }}"
+                        onclick="return confirm('¿Estás seguro de que quieres eliminar este registro?');">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block content%}
+
+<div class="register_div">
+    <h2>Registrar detalle de punto de recolección</h2>
+    <form action="{{ url_for('registrar_detalles') }}" method="post">
+        <label for="id_manejador">ID del Manejador:</label><br>
+        <input type="number" id="id_manejador" name="id_manejador" required><br>
+        <label for="id_camion">ID del Camión:</label><br>
+        <input type="number" id="id_camion" name="id_camion" required><br>
+        <label for="id_punto_recoleccion">ID del Punto de Recolección:</label><br>
+        <input type="number" id="id_punto_recoleccion" name="id_punto_recoleccion" required><br>
+        <label for="fecha">Fecha:</label><br>
+        <input type="date" id="fecha" name="fecha" required><br>
+        <label for="plastico">Cantidad de Plástico (KG):</label><br>
+        <input type="number" id="plastico" name="plastico" step="0.01" required><br>
+        <label for="carton">Cantidad de Cartón (KG):</label><br>
+        <input type="number" id="carton" name="carton" step="0.01" required><br>
+        <label for="organicos">Cantidad de Orgánicos (KG):</label><br>
+        <input type="number" id="organicos" name="organicos" step="0.01" required><br>
+        <input class="btn" type="submit" value="Crear">
+    </form>
+
+    {% if error_message %}
+    <p style=" color: red;">{{ error_message }}</p>
+    {% if errors %}
+    <ul>
+        {% for field, error in errors.items() %}
+        <li style="color: red;">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endif %}
+</div>
+
+
+
+{% endblock %}

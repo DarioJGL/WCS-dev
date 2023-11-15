@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Registros Detalles{% endblock %}
+
+{% block content%}
+<div class="vista_div">
+    <h2>Registros de Detalles de Recolección</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ID del Manejador</th>
+                <th>ID del Camión</th>
+                <th>ID del Punto de Recolección</th>
+                <th>Fecha</th>
+                <th>Cantidad de Plástico Kg</th>
+                <th>Cantidad de Cartón Kg</th>
+                <th>Cantidad de Orgánicos Kg</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in registros %}
+            <tr>
+                <td>{{ registro[0] }}</td>
+                <td>{{ registro[1] }}</td>
+                <td>{{ registro[2] }}</td>
+                <td>{{ registro[3] }}</td>
+                <td>{{ registro[4] }}</td>
+                <td>{{ registro[5] }}</td>
+                <td>{{ registro[6] }}</td>
+                <td>{{ registro[7] }}</td>
+                <td><a href="{{ url_for('actualizar_detalles', id=registro[0]) }}">Editar</a></td>
+                <td><a href="{{ url_for('eliminar_detalles', id=registro[0]) }}"
+                        onclick="return confirm('¿Estás seguro de que quieres eliminar este registro?');">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+
+{% endblock %}

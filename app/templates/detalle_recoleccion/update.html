@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Actualizar Detalle{% endblock %}
+
+{% block content%}
+<div class="register_div">
+    <h2>Actualizar Detalle de Recolección</h2>
+    <form action="{{ url_for('actualizar_detalles', id=registro[0]) }}" method="post">
+        <label for="id_manejador">ID del Manejador:</label><br>
+        <input type="number" id="id_manejador" name="id_manejador" value="{{ registro[1] }}" required><br>
+        <label for="id_camion">ID del Camión:</label><br>
+        <input type="number" id="id_camion" name="id_camion" value="{{ registro[2] }}" required><br>
+        <label for="id_punto_recoleccion">ID del Punto de Recolección:</label><br>
+        <input type="number" id="id_punto_recoleccion" name="id_punto_recoleccion" value="{{ registro[3] }}"
+            required><br>
+        <label for="fecha">Fecha:</label><br>
+        <input type="date" id="fecha" name="fecha" value="{{ registro[4] }}" required><br>
+        <label for="plastico">Cantidad de Plástico:</label><br>
+        <input type="number" id="plastico" name="plastico" step="0.01" value="{{ registro[5] }}" required><br>
+        <label for="carton">Cantidad de Cartón:</label><br>
+        <input type="number" id="carton" name="carton" step="0.01" value="{{ registro[6] }}" required><br>
+        <label for="organicos">Cantidad de Orgánicos:</label><br>
+        <input type="number" id="organicos" name="organicos" step="0.01" value="{{ registro[7] }}" required><br>
+        <input class="btn" type="submit" value="Actualizar">
+    </form>
+</div>
+
+
+{% endblock %}

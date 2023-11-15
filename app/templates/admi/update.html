@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Actualizar Admin{% endblock %}
+
+{% block content %}
+<div class="register_div">
+    <h2>Actualizar Administrador</h2>
+    <form method="post" action="{{ url_for('actualizar_admi', id=registro[0]) }}">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ registro[2] }}">
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" value="{{ registro[3] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" class="form-control" id="username" name="username" value="{{ registro[4] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="num_id">Numero de identificacion:</label>
+            <input type="text" class="form-control" id="num_id" name="num_id" value="{{ registro[1] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" class="form-control" id="correo" name="correo" value="{{ registro[5] }}">
+        </div>
+        <div class="form-group">
+            <label for="telefono">Número telefónico:</label>
+            <input type="tel" class="form-control" id="telefono" name="telefono" pattern="[0-9]{10}"
+                placeholder="Ingrese un número de 10 dígitos" value="{{ registro[6] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" class="form-control" id="contraseña" name="contraseña" value="{{ registro[7] }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
+    </form>
+
+</div>
+
+{% endblock %}
