@@ -14,7 +14,8 @@ try:
             USERNAME TEXT NOT NULL,
             CORREO TEXT,
             TELEFONO TEXT NOT NULL,
-            CONTRASEÑA TEXT
+            CONTRASEÑA TEXT,
+            ESTADO TEXT 
         );
     """)
 

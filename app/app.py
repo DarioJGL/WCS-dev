@@ -54,7 +54,7 @@ def admi_index():
     cursor = conn.cursor()
 
     # Obtener todos los registros de la tabla ADMIS
-    cursor.execute('SELECT * FROM ADMIS')
+    cursor.execute("SELECT * FROM ADMIS WHERE ESTADO = 'ACTIVO'")
     registros = cursor.fetchall()
 
     conn.close()
@@ -134,7 +134,7 @@ def admi_insert():
 
         # Inserta el nuevo dato en la base de datos
         cursor.execute(
-            'INSERT INTO ADMIS (NOMBRE, APELLIDO, NUM_ID, CORREO, TELEFONO, USERNAME, CONTRASEÑA) VALUES (?, ?, ?, ?, ?, ?, ?)',
+            'INSERT INTO ADMIS (NOMBRE, APELLIDO, NUM_ID, CORREO, TELEFONO, USERNAME, CONTRASEÑA, ESTADO) VALUES (?, ?, ?, ?, ?, ?, ?, "ACTIVO")',
             (nombre, apellido, num_id, correo, telefono, username, contraseña)
         )
         conn.commit()
@@ -151,7 +151,7 @@ def eliminar_admi(id):
     conn = sqlite3.connect('instance/WCS.db')
     cursor = conn.cursor()
 
-    cursor.execute('DELETE FROM admis WHERE ID = ?', (id,))
+    cursor.execute('UPDATE admis SET ESTADO = "INACTIVO" WHERE ID = ?', (id,))
 
     conn.commit()
     conn.close()
